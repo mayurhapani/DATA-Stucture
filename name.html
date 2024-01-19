@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name</title>
+    <style>
+      * {
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  var space = "&nbsp&nbsp";
+  var str = "";
+  for (i = 0; i < 5; i++) {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || j == 4 || (j == i && i < 3) || (i == 1 && j == 3)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+    str += space;
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || j == 4 || i == 0 || i == 2) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+    str += space;
+    for (j = 0; j < 5; j++) {
+      if ((j == i && i < 3) || (i == 1 && j == 3) || (i == 0 && j == 4) || (i > 1 && j == 2)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+    str += space;
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || j == 4 || i == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || (j == 4 && i < 3) || i == 0 || i == 2 || (i == j && i > 1)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+    str += "<br>";
+  }
+
+  document.write(str);
+</script>
