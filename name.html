@@ -16,15 +16,8 @@
 <script>
   var space = "&nbsp&nbsp";
   var str = "";
-  for (i = 0; i < 5; i++) {
-    for (j = 0; j < 5; j++) {
-      if (j == 0 || j == 4 || (j == i && i < 3) || (i == 1 && j == 3)) {
-        str += "* ";
-      } else {
-        str += "&nbsp ";
-      }
-    }
-    str += space;
+
+  function a() {
     for (j = 0; j < 5; j++) {
       if (j == 0 || j == 4 || i == 0 || i == 2) {
         str += "* ";
@@ -32,23 +25,19 @@
         str += "&nbsp ";
       }
     }
-    str += space;
-    for (j = 0; j < 5; j++) {
-      if ((j == i && i < 3) || (i == 1 && j == 3) || (i == 0 && j == 4) || (i > 1 && j == 2)) {
-        str += "* ";
-      } else {
-        str += "&nbsp ";
-      }
-    }
-    str += space;
-    for (j = 0; j < 5; j++) {
-      if (j == 0 || j == 4 || i == 4) {
-        str += "* ";
-      } else {
-        str += "&nbsp ";
-      }
-    }
+  }
 
+  function m() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || j == 4 || (j == i && i < 3) || (i == 1 && j == 3)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function r() {
     for (j = 0; j < 5; j++) {
       if (j == 0 || (j == 4 && i < 3) || i == 0 || i == 2 || (i == j && i > 1)) {
         str += "* ";
@@ -56,6 +45,38 @@
         str += "&nbsp ";
       }
     }
+  }
+
+  function u() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || j == 4 || i == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function y() {
+    for (j = 0; j < 5; j++) {
+      if ((j == i && i < 3) || (i == 1 && j == 3) || (i == 0 && j == 4) || (i > 1 && j == 2)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  for (i = 0; i < 5; i++) {
+    m();
+    str += space;
+    a();
+    str += space;
+    y();
+    str += space;
+    u();
+    str += space;
+    r();
     str += "<br>";
   }
 
