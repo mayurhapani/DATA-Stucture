@@ -10,16 +10,160 @@
       }
     </style>
   </head>
-  <body></body>
+  <body>
+    <center>
+      <input class="uInput" type="text" />
+      <button onclick="input()">select</button>
+      <div class="display"></div>
+    </center>
+  </body>
 </html>
 
 <script>
+  function input() {
+    const userInput = document.querySelector(".uInput").value;
+    console.log(userInput);
+
+    word = userInput.split("");
+    console.log(word);
+
+    word.map((char) => {
+      console.log(char);
+    });
+
+    for (i = 0; i < 5; i++) {
+      m();
+      str += space;
+      a();
+      str += space;
+      y();
+      str += space;
+      u();
+      str += space;
+      r();
+
+      str += "<br>";
+    }
+
+    document.querySelector(".display").innerHTML = str;
+  }
+
   var space = "&nbsp&nbsp";
   var str = "";
 
   function a() {
     for (j = 0; j < 5; j++) {
       if (j == 0 || j == 4 || i == 0 || i == 2) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function b() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || i == 4 || i == 0 || (i == 2 && j < 4) || (i == 1 && j == 4) || (i == 3 && j == 4)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function c() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || i == 4 || i == 0) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function d() {
+    for (j = 0; j < 5; j++) {
+      if (j == 1 || i == 4 || i == 0 || j == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function e() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || i == 4 || i == 0 || (i == 2 && j < 4)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function f() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || i == 0 || (i == 2 && j < 4)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function g() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || i == 0 || (i == 2 && j > 2) || (j == 4 && i > 2) || i == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function h() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || i == 2 || j == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function I() {
+    for (j = 0; j < 5; j++) {
+      if (i == 0 || j == 2 || i == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function J() {
+    for (j = 0; j < 5; j++) {
+      if (i == 0 || j == 2 || (i == 4 && j < 2) || (j == 0 && i > 2)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function K() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || (i == 4 && j == 2) || (i == 0 && j == 2) || (i == 1 && j == 1) || (i == 3 && j == 1)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function L() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || (i == 4 && j < 4)) {
         str += "* ";
       } else {
         str += "&nbsp ";
@@ -37,9 +181,69 @@
     }
   }
 
+  function n() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || j == 4 || j == i) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function o() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || j == 4 || i == 0 || i == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function p() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || (j == 4 && i < 2) || i == 0 || i == 2) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function q() {
+    for (j = 0; j < 5; j++) {
+      if ((j == 0 && i < 4) || j == 3 || (i == 0 && j < 3) || (i == 3 && j < 3) || (i == j && i > 1)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
   function r() {
     for (j = 0; j < 5; j++) {
       if (j == 0 || (j == 4 && i < 3) || i == 0 || i == 2 || (i == j && i > 1)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function s() {
+    for (j = 0; j < 5; j++) {
+      if ((j == 0 && i < 3) || (j == 4 && i > 2) || i == 0 || i == 2 || i == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function t() {
+    for (j = 0; j < 5; j++) {
+      if (i == 0 || j == 2) {
         str += "* ";
       } else {
         str += "&nbsp ";
@@ -57,6 +261,26 @@
     }
   }
 
+  function w() {
+    for (j = 0; j < 5; j++) {
+      if (j == 0 || j == 4 || (i == j && i > 1) || (i == 3 && j == 1)) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
+  function x() {
+    for (j = 0; j < 5; j++) {
+      if (j == i || i + j == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
+  }
+
   function y() {
     for (j = 0; j < 5; j++) {
       if ((j == i && i < 3) || (i == 1 && j == 3) || (i == 0 && j == 4) || (i > 1 && j == 2)) {
@@ -67,18 +291,13 @@
     }
   }
 
-  for (i = 0; i < 5; i++) {
-    m();
-    str += space;
-    a();
-    str += space;
-    y();
-    str += space;
-    u();
-    str += space;
-    r();
-    str += "<br>";
+  function z() {
+    for (j = 0; j < 5; j++) {
+      if (i == 0 || i == 4 || i + j == 4) {
+        str += "* ";
+      } else {
+        str += "&nbsp ";
+      }
+    }
   }
-
-  document.write(str);
 </script>
