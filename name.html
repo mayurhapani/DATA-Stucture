@@ -8,44 +8,177 @@
       * {
         font-family: monospace;
       }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .outer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .inputDiv {
+        display: flex;
+        justify-content: center;
+      }
+      button,
+      .uInput {
+        margin: 10px;
+      }
+      .display {
+        display: flex;
+      }
     </style>
   </head>
   <body>
-    <center>
-      <input class="uInput" type="text" />
-      <button onclick="input()">select</button>
+    <div class="outer">
+      <h1>Enter Your Name For Printing</h1>
+      <div class="inputDiv">
+        <input class="uInput" type="text" />
+        <button onclick="input()">select</button>
+      </div>
       <div class="display"></div>
-    </center>
+    </div>
   </body>
 </html>
 
 <script>
+  document.body.addEventListener("keydown", (event) => {
+    // console.log(event.key);
+    if (event.key == "Enter") input();
+  });
+
   function input() {
+    document.querySelector(".display").innerHTML = "";
     const userInput = document.querySelector(".uInput").value;
-    console.log(userInput);
+    // console.log(userInput);
 
     word = userInput.split("");
-    console.log(word);
+    // console.log(word);
 
     word.map((char) => {
-      console.log(char);
+      str = "";
+      for (i = 0; i < 5; i++) {
+        switch (char) {
+          case "a":
+            a();
+            break;
+          case "b":
+            b();
+            break;
+          case "c":
+            c();
+            break;
+          case "d":
+            d();
+            break;
+          case "e":
+            e();
+            break;
+          case "f":
+            f();
+            break;
+          case "g":
+            g();
+            break;
+          case "h":
+            h();
+            break;
+          case "i":
+            I();
+            break;
+          case "j":
+            j();
+            break;
+          case "k":
+            k();
+            break;
+          case "l":
+            l();
+            break;
+          case "m":
+            m();
+            break;
+          case "n":
+            n();
+            break;
+          case "o":
+            o();
+            break;
+          case "p":
+            p();
+            break;
+          case "q":
+            q();
+            break;
+          case "r":
+            r();
+            break;
+          case "s":
+            s();
+            break;
+          case "t":
+            t();
+            break;
+          case "u":
+            u();
+            break;
+          case "v":
+            v();
+            break;
+          case "w":
+            w();
+            break;
+          case "x":
+            x();
+            break;
+          case "y":
+            y();
+            break;
+          case "z":
+            z();
+            break;
+        }
+
+        str += "&nbsp <br>";
+      }
+      document.querySelector(".display").innerHTML += `<div>${str}</div>`;
+
+      // outputWords += outputWord;
     });
 
-    for (i = 0; i < 5; i++) {
-      m();
-      str += space;
-      a();
-      str += space;
-      y();
-      str += space;
-      u();
-      str += space;
-      r();
+    // word.map((char) => {
+    //   for (i = 0; i < 5; i++) {
+    //     // if (char == "a") a();
+    //     // str += space;
+    //     // if (char == "b") b();
 
-      str += "<br>";
-    }
+    //     a();
+    //     // str += space;
+    //     b();
 
-    document.querySelector(".display").innerHTML = str;
+    //     str += "<br>";
+    //   }
+
+    //   // outputWords += outputWord;
+    // });
+
+    // for (i = 0; i < 5; i++) {
+    //   m();
+    //   str += space;
+    //   a();
+    //   str += space;
+    //   y();
+    //   str += space;
+    //   u();
+    //   str += space;
+    //   r();
+
+    //   str += "<br>";
+    // }
+
+    // document.querySelector(".display").innerHTML = `<div>${str}</div>`;
   }
 
   var space = "&nbsp&nbsp";
@@ -59,6 +192,7 @@
         str += "&nbsp ";
       }
     }
+    // str += "</br>";
   }
 
   function b() {
@@ -69,6 +203,7 @@
         str += "&nbsp ";
       }
     }
+    // str += "</br>";
   }
 
   function c() {
