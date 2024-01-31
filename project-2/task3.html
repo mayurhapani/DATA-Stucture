@@ -1,0 +1,56 @@
+<script>
+  class Node {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+    }
+  }
+  class LinkList {
+    constructor() {
+      this.head = null;
+      this.size = 0;
+    }
+    insert(value) {
+      const newNode = new Node(value);
+
+      if (this.head == null) {
+        this.head = newNode;
+      } else {
+        let current = this.head;
+        while (current.next) {
+          current = current.next;
+        }
+        current.next = newNode;
+      }
+
+      this.size++;
+    }
+
+    findMiddle() {
+      let current = this.head;
+      let length = 0;
+      let mid = 0;
+
+      while (current) {
+        current = current.next;
+        length++;
+      }
+      mid = Math.floor(length / 2);
+      console.log(length);
+      console.log(mid);
+
+      while (current) {
+        current = current.next;
+      }
+    }
+  }
+
+  const List = new LinkList();
+  List.insert(10);
+  List.insert(20);
+  List.insert(30);
+  List.insert(40);
+  List.insert(50);
+  console.log(List);
+  List.findMiddle();
+</script>
