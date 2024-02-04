@@ -26,29 +26,18 @@
       this.size++;
     }
 
-    findMiddle() {
+    findNthNode(uValue) {
       let current = this.head;
-      let length = 0;
-      let mid = 0;
-      let count = 0;
+      let index = 0;
 
       while (current) {
-        current = current.next;
-        length++;
-      }
-      mid = Math.floor((length - 1) / 2);
-      //   console.log(length);
-      console.log(mid);
-
-      current = this.head;
-      while (current) {
-        if (count < mid) {
-          current = current.next;
-          count++;
-        } else {
-          //   console.log(current.value);
-          return current.value;
+        // console.log(current.value);
+        if (uValue == current.value) {
+          //   console.log(uValue);
+          return index;
         }
+        index++;
+        current = current.next;
       }
     }
   }
@@ -59,7 +48,6 @@
   List.insert(30);
   List.insert(40);
   List.insert(50);
-  List.insert(60);
   console.log(List);
-  console.log(List.findMiddle());
+  console.log(List.findNthNode(30));
 </script>

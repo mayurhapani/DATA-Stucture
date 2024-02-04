@@ -26,30 +26,28 @@
       this.size++;
     }
 
-    findMiddle() {
+    isPalindrome() {
       let current = this.head;
-      let length = 0;
-      let mid = 0;
-      let count = 0;
+      let arr = [];
 
       while (current) {
+        // if (current.value !== null) {}
+        arr.push(current.value);
         current = current.next;
-        length++;
       }
-      mid = Math.floor((length - 1) / 2);
-      //   console.log(length);
-      console.log(mid);
+      console.log(arr);
 
       current = this.head;
-      while (current) {
-        if (count < mid) {
+      for (let i = arr.length - 1; i >= 0; i--) {
+        // console.log(arr[i]);
+
+        if (arr[i] == current.value) {
           current = current.next;
-          count++;
         } else {
-          //   console.log(current.value);
-          return current.value;
+          return false;
         }
       }
+      return true;
     }
   }
 
@@ -57,9 +55,8 @@
   List.insert(10);
   List.insert(20);
   List.insert(30);
-  List.insert(40);
-  List.insert(50);
-  List.insert(60);
+  List.insert(20);
+  List.insert(10);
   console.log(List);
-  console.log(List.findMiddle());
+  console.log(List.isPalindrome());
 </script>
