@@ -1,0 +1,35 @@
+<script>
+  function find3rdGreater(arr) {
+    let result;
+
+    for (let i = 0; i < arr.length; i++) {
+      const stack = [];
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[i] < arr[j]) {
+          stack.push(arr[j]);
+        }
+      }
+      //   console.log(stack);
+
+      for (let j = 0; j < stack.length; j++) {
+        for (let k = 0; k < stack.length; k++) {
+          if (stack[j] < stack[k]) {
+            [stack[j], stack[k]] = [stack[k], stack[j]];
+          }
+        }
+      }
+      //   console.log(stack);
+
+      console.log("for ", arr[i], "therd largest element is ", stack[2] ? stack[2] : -1);
+
+      //   if (stack.length && result[i] === -1) {
+      //     result[i] = stack[stack.length - 1];
+      //   }
+      //   stack.push(arr[i]);
+    }
+  }
+
+  const arr = [4, 2, 7, 5, 8, 9, 3];
+  console.log("Array:", arr);
+  const result = find3rdGreater(arr);
+</script>

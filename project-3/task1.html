@@ -1,1 +1,20 @@
-<script></script>
+<!-- 1.Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that: -->
+
+<script>
+  function fourNumSum(arr, target) {
+    for (i = 0; i < arr.length; i++) {
+      for (j = i + 1; j < arr.length; j++) {
+        for (k = j + 1; k < arr.length; k++) {
+          for (l = k + 1; l < arr.length; l++) {
+            if (target == arr[i] + arr[j] + arr[k] + arr[l]) {
+              console.log(i, j, k, l);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  arr = [2, 5, -2, -6, 2, 7, 6, -1, 4];
+  fourNumSum(arr, 10);
+</script>
