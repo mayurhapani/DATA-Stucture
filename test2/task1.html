@@ -1,0 +1,50 @@
+<script>
+  class Node {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+    }
+  }
+  class LinkList {
+    constructor() {
+      this.head = null;
+      this.size = 0;
+    }
+    insert(value) {
+      const newNode = new Node(value);
+
+      if (this.head == null) {
+        this.head = newNode;
+      } else {
+        let current = this.head;
+        while (current.next) {
+          current = current.next;
+        }
+        current.next = newNode;
+      }
+
+      this.size++;
+    }
+
+    reverse() {
+      let prev = null;
+      let current = this.head;
+      while (current != null) {
+        let next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+      }
+      this.head = prev;
+    }
+  }
+
+  const List = new LinkList();
+  List.insert(10);
+  List.insert(20);
+  List.insert(30);
+  List.insert(40);
+
+  List.reverse();
+  console.log("Reversed List:", List);
+</script>

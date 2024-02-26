@@ -1,0 +1,50 @@
+<script>
+  function sortfun(arr) {
+    let left = 0,
+      right = arr.length - 1;
+
+    while (left <= right) {
+      if (arr[left] < 0) {
+        left++;
+      } else if (arr[right] >= 0) {
+        right--;
+      } else {
+        [arr[left], arr[right]] = [arr[right], arr[left]];
+        left++;
+        right--;
+      }
+    }
+
+    let i = 0;
+    while (i < left - 1) {
+      let j = i + 1;
+      while (j < left) {
+        if (arr[i] > arr[j]) {
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        j++;
+      }
+      i++;
+    }
+
+    i = left;
+    while (i < arr.length - 1) {
+      let j = i + 1;
+      while (j < arr.length) {
+        if (arr[i] > arr[j]) {
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        j++;
+      }
+      i++;
+    }
+
+    return arr;
+  }
+
+  const arr = [-12, 11, -13, -5, 6, -7, 5, -3, -6];
+  console.log("Original :", arr);
+
+  const sort = sortfun(arr);
+  console.log("Array after sort:", sort);
+</script>
